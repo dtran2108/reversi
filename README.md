@@ -16,7 +16,7 @@ Player B:
 ```
 ## First move
 The black player starts and gives a position among the valid choices. As you can see, the valid choices are given in alphabetical order.
-```py
+```sh
 ...
 Player B: f5
   a b c d e f g h
@@ -32,7 +32,7 @@ Valid choices: d6 f4 f6
 Player W:
 ```
 ## When a player cannot play
-```py
+```sh
   a b c d e f g h
 1 B . W W B B B B
 2 W B W W B B W W
@@ -57,7 +57,7 @@ Player B cannot play.
 ```
 ## End condition
 The game ends when both players cannot play anymore.
-```py
+```sh
   a b c d e f g h
 1 B W W W B B B B
 2 W W W W B B W W
@@ -91,13 +91,13 @@ Then, there is the score. This is easy, we can choose an int to count the points
 Now there is the board. How can we store that? We could use a string, but strings are immutable, so doing something like board[0] = 'W' would be impossible. For the same reason, we won't use a tuple. Now, we could use a dict or a list. The problem with the dict is that iterating on a dict is not as straightforward as iterating on a list. How can you be sure that you're iterating in the right order? (Depending on your version of python3, you can have different behaviors). So, for the board, the list is the winner.
 
 I'd go even further, and say that a list of list (matrix) can be used. For a board like this:
-```
+```sh
 B B
 W W
 ```
 I would store it like this:
 
-```
+```sh
 [['B', 'B'],
 ['W', 'W']]
 ```
@@ -105,7 +105,7 @@ I would store it like this:
 Programming is basically functions and data structures. So now that we have our data structures, let's think about our functions.
 
 First, we need a function to display the board. It's going turn a matrix like this:
-```
+```sh
 [['.', '.', '.', '.', '.', '.', '.', '.'],
 ['.', '.', '.', '.', '.', '.', '.', '.'],
 ['.', '.', '.', '.', '.', '.', '.', '.'],
@@ -116,7 +116,7 @@ First, we need a function to display the board. It's going turn a matrix like th
 ['.', '.', '.', '.', '.', '.', '.', '.']]
 ```
 Into this:
-```
+```sh
   a b c d e f g h
 1 . . . . . . . .
 2 . . . . . . . .
@@ -148,7 +148,7 @@ We start from our piece, here it's d5. The current player is B.
 Ok, you should have enough information to do that function now. After that, you will need a function to actually play the move that the player inputs.
 ## Error handling
 If the player plays something invalid, here is how you will handle it.
-```py
+```sh
   a b c d e f g h
 1 . . . . . . . .
 2 . . . . . . . .
