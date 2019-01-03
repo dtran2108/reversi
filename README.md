@@ -1,6 +1,6 @@
 # Reversi
 The game starts like this:
-```py
+```sh
 $ python3 reversi.py
   a b c d e f g h
 1 . . . . . . . .
